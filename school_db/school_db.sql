@@ -218,3 +218,6 @@ insert into enrolled (id, studentID, CourseID, grade)
 insert into enrolled (id, studentID, CourseID, grade)
 	values (20, 13, 1012, 'A');
 
+DROP USER IF EXISTS school_db_user@localhost;
+CREATE USER school_db_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON school_db.* TO school_db_user@localhost;
